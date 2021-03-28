@@ -70,7 +70,7 @@ function checkMinMax(min, max, input) {
 }
 
 function showAlert(msg) {
-    return document.write("<div class='alert show'>"+msg+"</div>")
+    return document.write('<div class="alert show">'+msg+'</div>')
 }
 
 if(checkHasNumber(charsArray)) {
@@ -80,7 +80,9 @@ if(checkHasNumber(charsArray)) {
 } else if(checkMinMax(1, 9, input)) {
     showAlert("Lütfen minimum 1 maximum 9 karaktere sahip değer girin!")
 } else {
-    document.write(`<div class="title"><h3>${input}</h3></div>`);
+    document.write(
+        '<div class="title"><h3>Girilen değer: '+input+'</h3></div>'
+    );
     document.write('<div class="title2"><h3>Oluşturulan kelimeler</h3></div>')
     for (var i = 0; i < charsArray.length; i++) {
         var randomizedString = "";
@@ -88,6 +90,6 @@ if(checkHasNumber(charsArray)) {
             randomizedString += input[Math.floor(Math.random() * input.length)];
         }
         var numberOfChar = i + 1;
-        document.write(`<li class="list"><span class="indicator">${numberOfChar} karakterli</span><span class="list-text">${randomizedString}</span></li>`)
+        document.write('<li class="list"><span class="indicator">'+ numberOfChar + ' karakterli</span><span class="list-text">'+randomizedString+'</span></li>')
     }
 }
