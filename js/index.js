@@ -1,5 +1,4 @@
-var input = prompt("Lütfen bir metin giriniz");
-var charsArray = input.split("");
+var userValue = prompt("Lütfen bir metin giriniz");
 
 function checkHasNumber(array) {
     var numbers = [
@@ -84,16 +83,16 @@ function makeRandomCombination(array) {
     }
 }
 
-if(checkHasNumber(charsArray)) {
+if(checkHasNumber(userValue)) {
     showAlert("Lütfen içerisinde numara olmayan bir değer girin!");
-} else if(checkSpecialChars(charsArray)) {
+} else if(checkSpecialChars(userValue)) {
     showAlert("Lütfen girdiğiniz kelime içerisinde özel karakter kullanmayınız!")
-} else if(checkMinMax(1, 9, input)) {
+} else if(checkMinMax(1, 9, userValue)) {
     showAlert("Lütfen minimum 1 maximum 9 karaktere sahip değer girin!")
 } else {
     document.write(
-        '<div class="title"><h3>Girilen değer: '+input+'</h3></div>'
+        '<div class="title"><h3>Girilen değer: '+userValue+'</h3></div>'
     );
     document.write('<div class="title2"><h3>Oluşturulan kelimeler</h3></div>')
-    makeRandomCombination(charsArray);
+    makeRandomCombination(userValue);
 }
