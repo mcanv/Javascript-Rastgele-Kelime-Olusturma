@@ -36,8 +36,10 @@ function checkSpecial(array) {
         ')'
     ];
     for(var i = 0; i < array.length; i++) {
-        if(specialChars.includes(array[i])) {
-            return true;
+        for(var j = 0; j < specialChars.length; j++) {
+            if(specialChars[j] == array[i]) {
+                return true;
+            }
         }
     }
 }
