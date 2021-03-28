@@ -33,7 +33,12 @@ function checkSpecial(array) {
         '.',
         '|',
         '(',
-        ')'
+        ')',
+        '@',
+        '₺',
+        '$',
+        '€',
+        '~'
     ];
     for(var i = 0; i < array.length; i++) {
         for(var j = 0; j < specialChars.length; j++) {
