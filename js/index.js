@@ -3,7 +3,7 @@ var charsArray = input.split("");
 
 function checkHasNumber(array) {
     for(var i = 0; i < array.length; i++) {
-        if(parseInt(array[i]) || parseFloat(array[i])) {
+        if(array[i] / 1 == array[i]) {
             return true;
         }
     }
