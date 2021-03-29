@@ -22,7 +22,7 @@ function checkHasNumber(array) {
     }
 }
 
-function checkSpecialChars(array) {
+function checkHasSpecialChar(array) {
     var specialChars = [
         '*',
         '#',
@@ -69,7 +69,7 @@ function checkMinMax(min, max, input) {
 }
 
 function showAlert(msg) {
-    return document.write('<div class="alert show">'+msg+'</div>')
+    return document.write('<div class="alert">'+msg+'</div>')
 }
 
 function makeRandomCombination(array) {
@@ -83,16 +83,12 @@ function makeRandomCombination(array) {
     }
 }
 
-if(checkHasNumber(userValue)) {
-    showAlert("Lütfen içerisinde numara olmayan bir değer girin!");
-} else if(checkSpecialChars(userValue)) {
-    showAlert("Lütfen girdiğiniz kelime içerisinde özel karakter kullanmayınız!")
+if(checkHasNumber(userValue) || checkHasSpecialChar(userValue)) {
+    showAlert("Lütfen içerisinde numara veya özel karakter olmayan bir değer girin!");
 } else if(checkMinMax(1, 9, userValue)) {
     showAlert("Lütfen minimum 1 maximum 9 karaktere sahip değer girin!")
 } else {
-    document.write(
-        '<div class="title"><h3>Girilen değer: '+userValue+'</h3></div>'
-    );
+    document.write('<div class="title"><h3>Girilen değer: '+userValue+'</h3></div>');
     document.write('<div class="title2"><h3>Oluşturulan kelimeler</h3></div>')
     makeRandomCombination(userValue);
 }
