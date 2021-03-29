@@ -79,15 +79,16 @@ function makeRandomCombination(array) {
             randomizedString += array[Math.floor(Math.random() * array.length)];
         }
         var numberOfChar = k;
-        document.write('<li class="list"><span class="indicator">'+ numberOfChar + ' karakterli</span><span class="list-text">'+randomizedString+'</span></li>')
+        document.write('<li class="list"><span class="indicator">'+ numberOfChar + ' karakterli</span><div class="seperator"></div><span class="list-text">'+randomizedString+'</span></li>')
     }
 }
 
 if(checkHasNumber(userValue) || checkHasSpecialChar(userValue)) {
     showAlert("Lütfen içerisinde numara veya özel karakter olmayan bir değer girin!");
 } else if(checkMinMax(1, 9, userValue)) {
-    showAlert("Lütfen minimum 1 maximum 9 karaktere sahip değer girin!")
+    showAlert("Lütfen minimum 1 maximum 9 karaktere sahip değer girin! <br> Sizin girdiğiniz karakter sayısı: " + userValue.length)
 } else {
+    alert("Doğru bir giriş yaptınız. Yönlendiriliyor...");
     document.write('<div class="title"><h3>Girilen değer: '+userValue+'</h3></div>');
     document.write('<div class="title2"><h3>Oluşturulan kelimeler</h3></div>')
     makeRandomCombination(userValue);
