@@ -88,7 +88,6 @@ if(checkHasNumber(userValue) || checkHasSpecialChar(userValue)) {
 } else if(checkMinMax(1, 9, userValue)) {
     showAlert("Lütfen minimum 1 maximum 9 karaktere sahip değer girin! <br> Sizin girdiğiniz karakter sayısı: " + userValue.length)
 } else {
-    alert("Doğru bir giriş yaptınız. Yönlendiriliyor...");
     document.write('<div class="title"><h3>Girilen değer: '+userValue+'</h3></div>');
     document.write('<div class="title2"><h3>Oluşturulan kelimeler</h3></div>')
     makeRandomCombination(userValue);
